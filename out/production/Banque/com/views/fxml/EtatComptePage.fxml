@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="420.0" prefWidth="830.0" style="-fx-background-color: #4c4177;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.views.controller.EtatCompteController">
+    <children>
+        <Pane layoutX="415.0" layoutY="60.0" prefHeight="315.0" prefWidth="365.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+            <children>
+                <Label layoutX="33.0" layoutY="7.0" prefHeight="45.0" prefWidth="225.0" text="Etat du compte" textFill="#4c4177">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            <Label layoutX="33.0" layoutY="71.0" prefHeight="27.0" prefWidth="80.0" text="Code :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="111.0" prefHeight="27.0" prefWidth="80.0" text="Nom client :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="158.0" prefHeight="27.0" prefWidth="80.0" text="Solde :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="196.0" prefHeight="27.0" prefWidth="80.0" text="Creer le :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="234.0" prefHeight="27.0" prefWidth="80.0" text="Type :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_code_compte" layoutX="141.0" layoutY="71.0" prefHeight="27.0" prefWidth="210.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_nom_client" layoutX="141.0" layoutY="111.0" prefHeight="27.0" prefWidth="210.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_solde" layoutX="141.0" layoutY="158.0" prefHeight="27.0" prefWidth="210.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_date_creation" layoutX="141.0" layoutY="196.0" prefHeight="27.0" prefWidth="210.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_type_compte" layoutX="141.0" layoutY="234.0" prefHeight="27.0" prefWidth="210.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_categorie" layoutX="33.0" layoutY="274.0" prefHeight="27.0" prefWidth="80.0" text="Decouvert :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_decouvert" layoutX="141.0" layoutY="274.0" prefHeight="27.0" prefWidth="210.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            </children>
+        </Pane>
+        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icons/34535222.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="85.0" layoutY="45.0" prefHeight="35.0" prefWidth="310.0" text="A Smarter Way Of Banking." textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="quotedisdp" editable="false" focusTraversable="false" layoutX="30.0" layoutY="175.0" prefHeight="200.0" prefWidth="350.0" text="Do Not Save What Is Left After Spending , Spend What Is Left After Saving." wrapText="true">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </TextArea>
+      <Label layoutX="30.0" layoutY="126.0" prefHeight="27.0" prefWidth="132.0" text="CODE DU COMPTE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="439.0" layoutY="37.0" prefHeight="20.0" prefWidth="67.0" text="Bienvenu" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_nom" layoutX="506.0" layoutY="37.0" prefHeight="20.0" prefWidth="132.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Pane layoutX="162.0" layoutY="105.0" prefHeight="64.0" prefWidth="219.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <TextField fx:id="ch_code_compte" layoutX="7.0" layoutY="22.0" prefHeight="25.0" prefWidth="160.0" promptText="code du compte" style="-fx-background-radius: 22; -fx-border-color: #4c4177; -fx-border-width: 2; -fx-border-radius: 20;" />
+            <Button layoutX="168.0" layoutY="20.0" mnemonicParsing="false" onAction="#getCodeCompte" style="-fx-background-radius: 22;" text="OK" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>

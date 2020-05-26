@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1366.0" style="-fx-background-color: #4c4177;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.views.controller.GererCompteController">
+    <children>
+        <Label fx:id="welcome" alignment="TOP_CENTER" layoutX="201.0" layoutY="30.0" prefHeight="35.0" prefWidth="188.0" text="ADMIN" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <TableView fx:id="compteTableGerer" layoutX="38.0" layoutY="89.0" onMouseClicked="#tableClickedClient" prefHeight="575.0" prefWidth="947.0">
+            <columns>
+                <TableColumn fx:id="col_code_compte" editable="false" prefWidth="65.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="Code" />
+                <TableColumn fx:id="col_date_creation" editable="false" prefWidth="236.99996948242188" resizable="false" sortable="false" text="Date de creation" />
+                <TableColumn fx:id="col_solde" editable="false" prefWidth="273.0" resizable="false" sortable="false" text="Solde du compte" />
+                <TableColumn fx:id="col_type_compte" editable="false" prefWidth="168.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="Type de compte" />
+                <TableColumn fx:id="col_code_client" editable="false" prefWidth="205.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="Code client" />
+            </columns>
+        </TableView>
+        <Pane layoutX="1010.0" layoutY="489.0" prefHeight="175.0" prefWidth="330.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+            <children>
+                <Button fx:id="btn_ajouter_compte" layoutX="10.0" layoutY="49.0" mnemonicParsing="false" onAction="#ajouterCompte" prefHeight="55.0" prefWidth="148.0" text="AJOUTER " />
+                <Button fx:id="btn_supprimer_compte" layoutX="165.0" layoutY="49.0" mnemonicParsing="false" onAction="#supprimerCompte" prefHeight="55.0" prefWidth="148.0" text="SUPPRIMER">
+                    <font>
+                        <Font size="14.0" />
+                    </font></Button>
+                <Button fx:id="btn_modifier_compte" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onAction="#modifierCompte" prefHeight="55.0" prefWidth="148.0" text="MODIFIER" />
+                <Button fx:id="actualiser_compte" layoutX="165.0" layoutY="112.0" mnemonicParsing="false" onAction="#ActualiserCompte" prefHeight="55.0" prefWidth="148.0" text="ACTUALISER" />
+                <TextField fx:id="ch_code_compte_click" layoutX="165.0" layoutY="7.0" prefHeight="35.0" prefWidth="148.0" />
+                <Label layoutX="14.0" layoutY="6.0" prefHeight="35.0" prefWidth="148.0" text="ID compte selectionner" />
+            </children>
+        </Pane>
+        <Pane layoutX="1010.0" layoutY="89.0" prefHeight="391.0" prefWidth="330.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+            <children>
+                <TextField fx:id="ch_solde_compte" layoutX="126.0" layoutY="152.0" prefHeight="35.0" prefWidth="188.0" promptText="Solde Compte">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="ch_code_compte" layoutX="126.0" layoutY="96.0" prefHeight="35.0" prefWidth="188.0" promptText="Code du compte">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="ch_type_compte" layoutX="126.0" layoutY="267.0" prefHeight="35.0" prefWidth="188.0" promptText="Type de compte">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="ch_code_client" layoutX="126.0" layoutY="319.0" prefHeight="35.0" prefWidth="188.0" promptText="Code du client">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="14.0" layoutY="319.0" prefHeight="35.0" prefWidth="94.0" text="Code client :">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="267.0" prefHeight="35.0" prefWidth="94.0" text="TypeCpte :">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="210.0" prefHeight="35.0" prefWidth="94.0" text="Date :">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="96.0" prefHeight="35.0" prefWidth="94.0" text="Code compte  :">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="152.0" prefHeight="35.0" prefWidth="94.0" text="Solde  :">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            <RadioButton fx:id="btn_radio_CC" layoutX="39.0" layoutY="31.0" mnemonicParsing="false" onAction="#selectCompteCourant" text="Compte Courant">
+               <toggleGroup>
+                  <ToggleGroup fx:id="CCorCE" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="btn_radio_CE" layoutX="177.0" layoutY="31.0" mnemonicParsing="false" onAction="#selectCompteEpargne" text="Compte epargne" toggleGroup="$CCorCE" />
+            <DatePicker fx:id="ch_date_creation" layoutX="126.0" layoutY="210.0" prefHeight="35.0" prefWidth="188.0" promptText="Date" />
+            </children>
+        </Pane>
+        <Label fx:id="welcome1" alignment="TOP_CENTER" layoutX="38.0" layoutY="30.0" prefHeight="35.0" prefWidth="163.0" text="WELCOME" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
